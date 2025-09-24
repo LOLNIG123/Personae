@@ -1,0 +1,209 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { ShoppingBag, ExternalLink, Mail, Instagram, Phone } from "lucide-react";
+
+/**
+ * Personaé — Landing Page v2 (ID)
+ * Perubahan sesuai request:
+ * - Teks full bahasa Indonesia & tone brand yang hangat, elegan.
+ * - Tombol terhubung ke Google Form validasi & marketplace (placeholder URL → tinggal ganti).
+ * - Katalog 16 MBTI + storytelling singkat per tipe.
+ * - Ganti palette warna & slot untuk foto botol (tinggal ganti URL gambar).
+ * - Form kontak pakai Netlify Forms (mudah kirim ke email). Notifikasi bisa di-set ke: brandonxavier1908@gmail.com di dashboard Netlify → Notifications.
+ */
+
+// ====== KONFIGURASI LINK (GANTI SESUAI PUNYAMU) ======
+const LINKS = {
+  googleForm: "https://forms.gle/your-google-form", // ← ganti link Google Form validasi
+  tokopedia: "https://tokopedia.com/toko-personae",   // ← ganti link Tokopedia
+  shopee: "https://shopee.co.id/toko-personae",       // ← ganti link Shopee
+  whatsapp: "https://wa.me/6281234567890",            // ← ganti nomor WA bisnis
+};
+
+// ====== GAMBAR PRODUK (GANTI URL-NYA DENGAN FOTO BOTOLMU) ======
+const heroBottle = "https://images.unsplash.com/photo-1556228453-efd1e5f5b9d1?q=80&w=600&auto=format&fit=crop";
+
+// Anda bisa ganti per tipe juga, kalau belum ada, semua fallback ke heroBottle
+const bottleByType = (type) => heroBottle;
+
+// ====== PALET WARNA BRAND ======
+const brand = {
+  bg: "bg-[#fff9f5]", // krem hangat
+  primary: "#0f172a", // almost black (elegan)
+  accent: "#ec9aa8", // rose muted
+};
+
+// ====== DATA 16 MBTI ======
+const MBTI = [
+  { code: "ISTJ", name: "The Archivist", notes: ["Iris", "Cedarwood", "Vetiver"], story: "Aku rapi, tenang, menjejak bumi. Iris berdebu menyatu dengan kayu kering—menawarkan kestabilan yang elegan.", vibe: "woody-powdery" },
+  { code: "ISFJ", name: "The Carekeeper", notes: ["Pear", "Lily", "Musk"], story: "Lembut dan protektif. Pir segar dan lily yang bersih memeluk hangat, meninggalkan jejak halus yang menenangkan.", vibe: "soft-floral" },
+  { code: "INFJ", name: "The Sage", notes: ["Violet", "Incense", "Amber"], story: "Halus di permukaan, dalam di inti. Violet berlapis dupa tipis—introspektif namun bersinar hangat.", vibe: "floral-amber" },
+  { code: "INTJ", name: "The Strategist", notes: ["Leather", "Black Tea", "Labdanum"], story: "Terkendali dan presisi. Kulit dan teh hitam, minimal namun berwibawa—dingin di luar, menyala di dalam.", vibe: "leathery-amber" },
+  { code: "ISTP", name: "The Tactician", notes: ["Bergamot", "Cypress", "Iso E"], story: "Ringan, tajam, efisien. Citrus bersih menabrak kayu hijau—gerak sunyi yang efektif.", vibe: "fresh-woody" },
+  { code: "ISFP", name: "The Aesthete", notes: ["Apricot", "Orris", "Cashmere"], story: "Puitis dan sensorial. Buah aprikot lembut di atas orris—sentuhan kain kasmir sepanjang hari.", vibe: "fruity-iris" },
+  { code: "INFP", name: "The Dreamweaver", notes: ["Osmanthus", "Coconut", "Smoke"], story: "Hangat, melankolis, penuh imajinasi. Bunga teh osmanthus bertemu kelapa tipis dan asap nostalgia.", vibe: "creamy-smoky" },
+  { code: "INTP", name: "The Analyst", notes: ["Mandarin", "Mate", "Musk"], story: "Jernih, logis, ringan. Mandarin dingin dengan pahit-mate—pikiran segar yang tidak berisik.", vibe: "citrus-aromatic" },
+  { code: "ESTP", name: "The Bolt", notes: ["Grapefruit", "Pink Pepper", "Amberwood"], story: "Cepat dan spontan. Grapefruit berkilau dan lada merah—energi yang menyalakan ruangan.", vibe: "sparkling-amber" },
+  { code: "ESFP", name: "The Spotlight", notes: ["Mango", "Tiare", "Vanilla"], story: "Riang dan memikat. Mangga juicy dengan tiare tropis—senyum yang menular.", vibe: "tropical-gourmand" },
+  { code: "ENFP", name: "The Spark", notes: ["Lime", "Neroli", "White Musk"], story: "Optimis dan penuh ide. Limau cerah menari dengan neroli—kebebasan dalam botol.", vibe: "citrus-floral" },
+  { code: "ENTP", name: "The Maverick", notes: ["Yuzu", "Cardamom", "Cedar"], story: "Main-main tapi tajam. Yuzu segar dibumbui kapulaga—kejutan yang menyenangkan.", vibe: "zesty-woody" },
+  { code: "ESTJ", name: "The Marshal", notes: ["Aldehydes", "Geranium", "Oakmoss"], story: "Tertata dan tegas. Bersih, klasik, dan siap memimpin—proyeksi rapi sepanjang hari.", vibe: "soapy-chypre" },
+  { code: "ESFJ", name: "The Host", notes: ["Peony", "Raspberry", "White Woods"], story: "Hangat sosial. Peony dan raspberry halus—ramah, mudah disukai.", vibe: "fresh-floral" },
+  { code: "ENFJ", name: "The Orchestrator", notes: ["Blackcurrant", "Jasmine", "Ambroxan"], story: "Empatik dan menggerakkan. Cassis dan melati yang modern—auranya mempersatukan.", vibe: "modern-floral" },
+  { code: "ENTJ", name: "The Commander", notes: ["Saffron", "Oud", "Patchouli"], story: "Berani dan visioner. Saffron kering bertemu oud ramping—signature yang berkarakter.", vibe: "resinous-woody" },
+];
+
+const Section = ({ id, title, children, subtitle }) => (
+  <section id={id} className={`mx-auto max-w-6xl px-4 py-16`}>
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-semibold">{title}</h2>
+      {subtitle && <p className="text-sm text-muted-foreground mt-2">{subtitle}</p>}
+    </div>
+    {children}
+  </section>
+);
+
+export default function Website() {
+  return (
+    <div className={`min-h-screen ${brand.bg} text-slate-900`}>
+      {/* NAV */}
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+          <a href="#hero" className="font-serif text-2xl tracking-wide">Pērsonae</a>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#about" className="hover:opacity-70">Tentang</a>
+            <a href="#catalog" className="hover:opacity-70">Katalog</a>
+            <a href="#finder" className="hover:opacity-70">Cari Aroma MBTI</a>
+            <a href="#contact" className="hover:opacity-70">Kontak</a>
+            <a href={LINKS.tokopedia} target="_blank" className="rounded-2xl px-4 py-2 border hover:bg-black hover:text-white transition flex items-center gap-2"><ShoppingBag className="h-4 w-4"/> Marketplace</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section id="hero" className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5}}>
+            <h1 className="font-serif text-4xl md:text-6xl leading-tight">
+              Parfum Personal yang Bicara Bahasa Dirimu
+            </h1>
+            <p className="mt-5 text-lg text-slate-600">
+              Kami menerjemahkan 16 tipe MBTI menjadi komposisi aroma yang hidup. Setiap botol adalah cerita—tentang cara kamu merasa, berpikir, dan terhubung.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#catalog"><Button className="rounded-2xl px-5" style={{backgroundColor: brand.primary}}>Lihat Katalog</Button></a>
+              <a href={LINKS.googleForm} target="_blank"><Button variant="outline" className="rounded-2xl px-5">Ikuti Form Validasi <ExternalLink className="ml-2 h-4 w-4"/></Button></a>
+            </div>
+          </motion.div>
+          <motion.div initial={{opacity:0, scale:0.98}} animate={{opacity:1, scale:1}} transition={{duration:0.5, delay:0.1}} className="relative">
+            <div className="aspect-[4/5] w-full rounded-3xl bg-white shadow-xl border overflow-hidden grid place-items-center">
+              <img src={heroBottle} alt="Botol Personaé" className="h-full w-full object-cover"/>
+            </div>
+            <div className="absolute -z-10 inset-0 blur-3xl opacity-30" style={{background: `linear-gradient(45deg, ${brand.accent}33, #ffd7ba33, #ffffff00)`}}/>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <Section id="about" title="Aroma dengan Logika, Cerita dengan Rasa" subtitle="Metodologi Pērsonae memadukan riset kepribadian & seni perfumery—top, heart, base disesuaikan preferensi emosional dan kognitif tiap tipe.">
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="rounded-2xl"><CardHeader><CardTitle>Personalized MBTI</CardTitle></CardHeader><CardContent className="text-sm text-muted-foreground">16 tipe dengan akord khas (citrus/floral/woody/amber) yang seimbang untuk penggunaan harian.</CardContent></Card>
+          <Card className="rounded-2xl"><CardHeader><CardTitle>Blind-Buy Friendly</CardTitle></CardHeader><CardContent className="text-sm text-muted-foreground">Setiap produk dilengkapi catatan aroma, intensitas 1–5, dan sillage untuk pilihan aman.</CardContent></Card>
+          <Card className="rounded-2xl"><CardHeader><CardTitle>Quality First</CardTitle></CardHeader><CardContent className="text-sm text-muted-foreground">Ethanol food grade, standar kebersihan produksi, dan evaluasi stabilitas sederhana.</CardContent></Card>
+        </div>
+      </Section>
+
+      {/* CATALOG 16 MBTI */}
+      <Section id="catalog" title="Katalog Pērsonae — 16 MBTI" subtitle="Pilih tipe favoritmu. Klik untuk ke marketplace.">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
+          {MBTI.map((p) => (
+            <Card key={p.code} className="rounded-2xl hover:shadow-lg transition">
+              <CardHeader>
+                <CardTitle className="text-lg">{p.code} — {p.name}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden border bg-white">
+                  <img src={bottleByType(p.code)} alt={`Botol ${p.code}`} className="h-full w-full object-cover"/>
+                </div>
+                <p className="text-sm text-muted-foreground">{p.story}</p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  {p.notes.map((n)=> (
+                    <span key={n} className="px-2 py-1 rounded-full border bg-white">{n}</span>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <a href={LINKS.tokopedia} target="_blank" className="flex-1"><Button className="w-full rounded-xl">Tokopedia</Button></a>
+                  <a href={LINKS.shopee} target="_blank" className="flex-1"><Button variant="outline" className="w-full rounded-xl">Shopee</Button></a>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* FINDER */}
+      <Section id="finder" title="Cari Aroma MBTI" subtitle="Belum tahu MBTI-mu? Mulai dari form validasi singkat.">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
+          <Card className="rounded-2xl">
+            <CardHeader><CardTitle>Form Validasi (Google Form)</CardTitle></CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>Klik tombol di bawah untuk mengisi preferensi aroma & tipe MBTI. Kami gunakan hasilnya untuk rekomendasi.</p>
+              <a href={LINKS.googleForm} target="_blank"><Button className="rounded-xl">Buka Google Form <ExternalLink className="ml-2 h-4 w-4"/></Button></a>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl">
+            <CardHeader><CardTitle>Butuh Bantuan Cepat?</CardTitle></CardHeader>
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+              <a href={LINKS.whatsapp} target="_blank" className="inline-flex items-center gap-2 underline"><Phone className="h-4 w-4"/> WhatsApp</a>
+              <a href="https://instagram.com/personae" target="_blank" className="inline-flex items-center gap-2 underline"><Instagram className="h-4 w-4"/> Instagram</a>
+            </CardContent>
+          </Card>
+        </div>
+      </Section>
+
+      {/* CONTACT - Netlify Forms */}
+      <Section id="contact" title="Hubungi Kami" subtitle="Tanyakan kolaborasi, pre-order, atau reseller. Form ini menggunakan Netlify Forms.">
+        <div className="rounded-3xl p-8 md:p-12 border bg-white/80 shadow">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="grid md:grid-cols-2 gap-4">
+            {/* Netlify requires this hidden input */}
+            <input type="hidden" name="form-name" value="contact" />
+            <p className="hidden">
+              <label>Jangan diisi: <input name="bot-field" /></label>
+            </p>
+            <div className="col-span-1">
+              <label className="text-sm">Nama</label>
+              <Input required name="nama" placeholder="Nama kamu" className="rounded-xl mt-1"/>
+            </div>
+            <div className="col-span-1">
+              <label className="text-sm">Email</label>
+              <Input required type="email" name="email" placeholder="email@contoh.com" className="rounded-xl mt-1"/>
+            </div>
+            <div className="col-span-2">
+              <label className="text-sm">Pesan</label>
+              <Textarea name="pesan" placeholder="Tulis pesan kamu…" className="rounded-xl mt-1"/>
+            </div>
+            <div className="col-span-2 flex items-center gap-3">
+              <Button className="rounded-xl">Kirim <Mail className="ml-2 h-4 w-4"/></Button>
+              <span className="text-xs text-muted-foreground">Balasan akan dikirim ke email kamu. Notifikasi ke admin bisa diatur ke <b>brandonxavier1908@gmail.com</b> dari dashboard Netlify → Notifications.</span>
+            </div>
+          </form>
+        </div>
+      </Section>
+
+      {/* FOOTER */}
+      <footer className="border-t">
+        <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} Pērsonae. Semua hak cipta.</p>
+          <div className="flex gap-4">
+            <a href="#" className="hover:opacity-80">Kebijakan Privasi</a>
+            <a href="#" className="hover:opacity-80">Syarat & Ketentuan</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
