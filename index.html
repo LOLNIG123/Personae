@@ -4,195 +4,155 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pērsonae — Parfum MBTI</title>
-  <meta name="description" content="Pērsonae menerjemahkan 16 tipe MBTI menjadi aroma yang personal.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --brand:#0f172a; --accent:#ec9aa8; }
-    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
-    .font-serif{ font-family:"Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif; }
-    .glass{ background: rgba(255,255,255,.75); backdrop-filter: blur(8px); }
+    :root { --brand:#0f172a }
+    body{ font-family:Inter,system-ui,sans-serif }
+    .font-serif{ font-family:"Playfair Display",serif }
   </style>
 </head>
 <body class="min-h-screen bg-[#fff9f5] text-slate-900">
 
-  <header class="sticky top-0 z-40 glass border-b">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#hero" class="font-serif text-2xl tracking-wide">Pērsonae</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:opacity-70">Tentang</a>
-        <a href="#catalog" class="hover:opacity-70">Katalog</a>
-        <a href="#finder" class="hover:opacity-70">Cari Aroma MBTI</a>
-        <a href="#contact" class="hover:opacity-70">Kontak</a>
-        <a id="nav-market" href="#" target="_blank" class="rounded-2xl px-4 py-2 border hover:bg-black hover:text-white transition">Marketplace</a>
-      </nav>
-    </div>
-  </header>
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+  <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <a href="#hero" class="font-serif text-2xl">Pērsonae</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#about">Tentang</a>
+      <a href="#catalog">Katalog</a>
+      <a href="#finder">MBTI</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
 
-  <section id="hero" class="relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="font-serif text-4xl md:text-6xl leading-tight">Parfum Personal yang Bicara Bahasa Dirimu</h1>
-        <p class="mt-5 text-lg text-slate-600">
-          Kami menerjemahkan 16 tipe MBTI menjadi komposisi aroma yang hidup. Setiap botol adalah cerita—tentang cara kamu merasa, berpikir, dan terhubung.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#catalog" class="rounded-2xl px-5 py-2.5 text-white" style="background:var(--brand)">Lihat Katalog</a>
-          <a id="cta-form" href="#" target="_blank" class="rounded-2xl px-5 py-2.5 border">Ikuti Form Validasi</a>
-        </div>
-      </div>
-      <div class="relative">
-        <div class="aspect-[4/5] w-full rounded-3xl bg-white shadow-xl border overflow-hidden grid place-items-center">
-          <img id="heroBottle" alt="Botol Personaé" class="h-full w-full object-cover" />
-        </div>
-        <div class="absolute -z-10 inset-0 blur-3xl opacity-30" style="background:linear-gradient(45deg, #ec9aa833, #ffd7ba33, #ffffff00)"></div>
-      </div>
+<section id="hero" class="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h1 class="font-serif text-4xl md:text-6xl">Parfum Personal yang Bicara Bahasa Dirimu</h1>
+    <p class="mt-5 text-lg text-slate-600">Kami menerjemahkan 16 tipe MBTI menjadi aroma hidup. Setiap botol adalah cerita tentang cara kamu merasa, berpikir, dan terhubung.</p>
+    <div class="mt-6 flex gap-3">
+      <a href="#catalog" class="px-5 py-2.5 rounded-2xl text-white" style="background:var(--brand)">Lihat Katalog</a>
+      <a id="wa" href="https://wa.me/6289623241843" target="_blank" class="px-5 py-2.5 rounded-2xl border">WhatsApp</a>
     </div>
-  </section>
+  </div>
+  <div>
+    <img id="heroBottle" src="" alt="Botol Personaé" class="rounded-3xl shadow border w-full aspect-[4/3] object-cover" />
+  </div>
+</section>
 
-  <section id="about" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="mb-8">
-      <h2 class="text-2xl md:text-3xl font-semibold">Aroma dengan Logika, Cerita dengan Rasa</h2>
-      <p class="text-sm text-slate-600 mt-2">Metodologi Pērsonae memadukan riset kepribadian & seni perfumery—top, heart, base disesuaikan preferensi emosional dan kognitif tiap tipe.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border p-6 bg-white text-sm text-slate-600"><h3 class="font-semibold mb-1">Personalized MBTI</h3>16 tipe dengan akord khas (citrus/floral/woody/amber) yang seimbang untuk penggunaan harian.</div>
-      <div class="rounded-2xl border p-6 bg-white text-sm text-slate-600"><h3 class="font-semibold mb-1">Blind-Buy Friendly</h3>Setiap produk memiliki catatan aroma, intensitas 1–5, dan sillage untuk pilihan aman.</div>
-      <div class="rounded-2xl border p-6 bg-white text-sm text-slate-600"><h3 class="font-semibold mb-1">Quality First</h3>Ethanol food grade, standar kebersihan produksi, dan evaluasi stabilitas sederhana.</div>
-    </div>
-  </section>
+<section id="about" class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">Aroma dengan Logika, Cerita dengan Rasa</h2>
+  <p class="text-slate-600 mb-6">Top, heart, dan base disusun agar sesuai preferensi tiap tipe MBTI.</p>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Personalized MBTI</div>
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Blind-Buy Friendly</div>
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Quality First</div>
+  </div>
+</section>
 
-  <section id="catalog" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="mb-8">
-      <h2 class="text-2xl md:text-3xl font-semibold">Katalog Pērsonae — 16 MBTI</h2>
-      <p class="text-sm text-slate-600 mt-2">Pilih tipe favoritmu. Klik untuk ke marketplace.</p>
-    </div>
-    <div id="cards" class="grid md:grid-cols-4 sm:grid-cols-2 gap-6"></div>
-  </section>
+<section id="catalog" class="mx-auto max-w-6xl px-4 py-16">
+  <div class="mb-8">
+    <h2 class="text-2xl md:text-3xl font-semibold">Katalog Pērsonae — 16 MBTI</h2>
+    <p class="text-sm text-slate-600 mt-2">Klik kartu untuk ke marketplace.</p>
+  </div>
+  <div id="cards" class="grid md:grid-cols-4 sm:grid-cols-2 gap-6"></div>
+</section>
 
-  <section id="finder" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="mb-8">
-      <h2 class="text-2xl md:text-3xl font-semibold">Cari Aroma MBTI</h2>
-      <p class="text-sm text-slate-600 mt-2">Belum tahu MBTI-mu? Mulai dari form validasi singkat.</p>
+<section id="finder" class="mx-auto max-w-6xl px-4 py-16">
+  <div class="mb-8">
+    <h2 class="text-2xl md:text-3xl font-semibold">Cari Aroma MBTI</h2>
+    <p class="text-sm text-slate-600 mt-2">Belum tahu MBTI-mu? Isi form validasi.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6 items-start">
+    <div class="rounded-2xl border p-6 bg-white">
+      <h3 class="font-semibold">Form Validasi (Google Form)</h3>
+      <p class="text-sm text-slate-600 mt-2">Klik tombol di bawah untuk mengisi preferensi aroma & tipe MBTI.</p>
+      <a id="formLink" href="#" target="_blank" class="mt-4 inline-block rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Buka Google Form</a>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 items-start">
-      <div class="rounded-2xl border p-6 bg-white">
-        <h3 class="font-semibold">Form Validasi (Google Form)</h3>
-        <p class="text-sm text-slate-600 mt-2">Klik tombol di bawah untuk mengisi preferensi aroma & tipe MBTI.</p>
-        <a id="finder-form" href="#" target="_blank" class="mt-4 inline-block rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Buka Google Form</a>
-      </div>
-      <div class="rounded-2xl border p-6 bg-white">
-        <h3 class="font-semibold">Butuh Bantuan Cepat?</h3>
-        <div class="mt-3 flex flex-wrap gap-3 text-sm">
-          <a id="wa-link" href="#" target="_blank" class="underline">WhatsApp</a>
-          <a id="tokopedia-link" href="#" target="_blank" class="underline">Tokopedia</a>
-          <a id="shopee-link" href="#" target="_blank" class="underline">Shopee</a>
-        </div>
+    <div class="rounded-2xl border p-6 bg-white">
+      <h3 class="font-semibold">Link Cepat</h3>
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        <a id="tokopediaLink" href="#" target="_blank" class="underline">Tokopedia</a>
+        <a id="shopeeLink" href="#" target="_blank" class="underline">Shopee</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="rounded-3xl p-8 md:p-12 border bg-white/80 shadow">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Hubungi Kami</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="grid md:grid-cols-2 gap-4">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden"><label>Jangan diisi: <input name="bot-field" /></label></p>
-        <div>
-          <label class="text-sm">Nama</label>
-          <input required name="nama" placeholder="Nama kamu" class="rounded-xl mt-1 px-3 py-2 border w-full" />
+<section id="contact" class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">Hubungi Kami</h2>
+  <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" class="grid gap-4 max-w-lg">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden"><input name="bot-field"></p>
+    <input type="text" name="nama" placeholder="Nama" class="border rounded-xl px-3 py-2" required>
+    <input type="email" name="email" placeholder="Email" class="border rounded-xl px-3 py-2" required>
+    <textarea name="pesan" placeholder="Pesan" class="border rounded-xl px-3 py-2 h-28"></textarea>
+    <button class="px-4 py-2 rounded-xl text-white" style="background:var(--brand)">Kirim</button>
+  </form>
+  <p class="text-xs text-slate-500 mt-2">Aktifkan notifikasi form ke email kamu di Netlify → Forms → Notifications (isi: brandonxavier1908@gmail.com).</p>
+</section>
+
+<footer class="border-t">
+  <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600 flex justify-between">
+    <p>© <span id="year"></span> Pērsonae</p>
+  </div>
+</footer>
+
+<script>
+  const LINKS = {
+    googleForm: "#",
+    tokopedia: "#",
+    shopee: "#",
+    whatsapp: "https://wa.me/6289623241843"
+  };
+  const heroBottle = "https://images.unsplash.com/photo-1556228453-efd1e5f5b9d1?q=80&w=1200&auto=format&fit=crop";
+  const MBTI = [
+    { code:"ISTJ", name:"The Archivist", notes:["Iris","Cedarwood","Vetiver"], story:"Rapi, stabil, elegan." },
+    { code:"ISFJ", name:"The Carekeeper", notes:["Pear","Lily","Musk"], story:"Lembut dan protektif." },
+    { code:"INFJ", name:"The Sage", notes:["Violet","Incense","Amber"], story:"Dalam dan hangat." },
+    { code:"INTJ", name:"The Strategist", notes:["Leather","Black Tea","Labdanum"], story:"Presisi dan visioner." },
+    { code:"ISTP", name:"The Tactician", notes:["Bergamot","Cypress","Iso E"], story:"Ringan dan efisien." },
+    { code:"ISFP", name:"The Aesthete", notes:["Apricot","Orris","Cashmere"], story:"Puitis dan sensorial." },
+    { code:"INFP", name:"The Dreamweaver", notes:["Osmanthus","Coconut","Smoke"], story:"Hangat dan melankolis." },
+    { code:"INTP", name:"The Analyst", notes:["Mandarin","Mate","Musk"], story:"Jernih dan logis." },
+    { code:"ESTP", name:"The Bolt", notes:["Grapefruit","Pink Pepper","Amberwood"], story:"Cepat dan spontan." },
+    { code:"ESFP", name:"The Spotlight", notes:["Mango","Tiare","Vanilla"], story:"Riang dan memikat." },
+    { code:"ENFP", name:"The Spark", notes:["Lime","Neroli","White Musk"], story:"Optimis dan penuh ide." },
+    { code:"ENTP", name:"The Maverick", notes:["Yuzu","Cardamom","Cedar"], story:"Tajam dan mengejutkan." },
+    { code:"ESTJ", name:"The Marshal", notes:["Aldehydes","Geranium","Oakmoss"], story:"Tertata dan tegas." },
+    { code:"ESFJ", name:"The Host", notes:["Peony","Raspberry","White Woods"], story:"Hangat sosial." },
+    { code:"ENFJ", name:"The Orchestrator", notes:["Blackcurrant","Jasmine","Ambroxan"], story:"Memimpin dengan empati." },
+    { code:"ENTJ", name:"The Commander", notes:["Saffron","Oud","Patchouli"], story:"Berani dan berkarakter." }
+  ];
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("heroBottle").src = heroBottle;
+  document.getElementById("formLink").href = LINKS.googleForm;
+  document.getElementById("tokopediaLink").href = LINKS.tokopedia;
+  document.getElementById("shopeeLink").href = LINKS.shopee;
+  document.getElementById("wa").href = LINKS.whatsapp;
+
+  const wrap = document.getElementById("cards");
+  MBTI.forEach(p => {
+    const el = document.createElement("div");
+    el.className = "rounded-2xl border bg-white hover:shadow-lg transition flex flex-col";
+    el.innerHTML = `
+      <div class="p-6"><h3 class="font-semibold text-lg">${p.code} — ${p.name}</h3></div>
+      <div class="px-6 pb-6 space-y-3 grow">
+        <div class="aspect-[4/5] rounded-xl overflow-hidden border bg-white/60">
+          <img src="${heroBottle}" alt="Botol ${p.code}" class="h-full w-full object-cover">
         </div>
-        <div>
-          <label class="text-sm">Email</label>
-          <input required type="email" name="email" placeholder="email@contoh.com" class="rounded-xl mt-1 px-3 py-2 border w-full" />
+        <p class="text-sm text-slate-600">${p.story}</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          ${p.notes.map(n => `<span class="px-2 py-1 rounded-full border bg-white">${n}</span>`).join("")}
         </div>
-        <div class="md:col-span-2">
-          <label class="text-sm">Pesan</label>
-          <textarea name="pesan" placeholder="Tulis pesan kamu…" class="rounded-xl mt-1 px-3 py-2 border w-full h-28"></textarea>
+        <div class="grid grid-cols-2 gap-2 pt-2">
+          <a href="${LINKS.tokopedia}" target="_blank" class="rounded-xl px-3 py-2 text-center text-white" style="background:var(--brand)">Tokopedia</a>
+          <a href="${LINKS.shopee}" target="_blank" class="rounded-xl px-3 py-2 text-center border">Shopee</a>
         </div>
-        <div class="md:col-span-2">
-          <button class="rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Kirim</button>
-        </div>
-      </form>
-      <p class="text-xs text-slate-500 mt-2">Atur notifikasi form ke email: <b>brandonxavier1908@gmail.com</b> di Netlify → Site settings → Forms → Notifications.</p>
-    </div>
-  </section>
-
-  <footer class="border-t">
-    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
-      <p>© <span id="year"></span> Pērsonae. Semua hak cipta.</p>
-      <div class="flex gap-4">
-        <a href="#" class="hover:opacity-80">Kebijakan Privasi</a>
-        <a href="#" class="hover:opacity-80">Syarat & Ketentuan</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const LINKS = {
-      googleForm: "https://forms.gle/your-google-form",
-      tokopedia: "https://tokopedia.com/toko-personae",
-      shopee: "https://shopee.co.id/toko-personae",
-      whatsapp: "https://wa.me/6281234567890"
-    };
-
-    const heroBottle = "https://images.unsplash.com/photo-1556228453-efd1e5f5b9d1?q=80&w=1200&auto=format&fit=crop";
-
-    const imageByType = (t) => heroBottle; // ganti per tipe jika punya URL berbeda
-
-    const MBTI = [
-      { code:"ISTJ", name:"The Archivist", notes:["Iris","Cedarwood","Vetiver"], story:"Aku rapi, tenang, menjejak bumi. Iris berdebu menyatu dengan kayu kering—memberi kestabilan elegan." },
-      { code:"ISFJ", name:"The Carekeeper", notes:["Pear","Lily","Musk"], story:"Lembut dan protektif. Pir segar dan lily bersih memeluk hangat, jejak halus yang menenangkan." },
-      { code:"INFJ", name:"The Sage", notes:["Violet","Incense","Amber"], story:"Halus di permukaan, dalam di inti. Violet berlapis dupa tipis—introspektif namun hangat." },
-      { code:"INTJ", name:"The Strategist", notes:["Leather","Black Tea","Labdanum"], story:"Terkendali dan presisi. Kulit dan teh hitam—dingin di luar, menyala di dalam." },
-      { code:"ISTP", name:"The Tactician", notes:["Bergamot","Cypress","Iso E"], story:"Ringan, tajam, efisien. Citrus bersih menabrak kayu hijau—gerak sunyi yang efektif." },
-      { code:"ISFP", name:"The Aesthete", notes:["Apricot","Orris","Cashmere"], story:"Puitis dan sensorial. Aprikot lembut di atas orris—sentuhan kasmir sepanjang hari." },
-      { code:"INFP", name:"The Dreamweaver", notes:["Osmanthus","Coconut","Smoke"], story:"Hangat, melankolis, penuh imajinasi. Osmanthus bertemu kelapa tipis dan asap nostalgia." },
-      { code:"INTP", name:"The Analyst", notes:["Mandarin","Mate","Musk"], story:"Jernih, logis, ringan. Mandarin dingin dengan mate—pikiran segar yang tidak berisik." },
-      { code:"ESTP", name:"The Bolt", notes:["Grapefruit","Pink Pepper","Amberwood"], story:"Cepat dan spontan. Grapefruit berkilau dan lada merah—energi yang menyalakan ruangan." },
-      { code:"ESFP", name:"The Spotlight", notes:["Mango","Tiare","Vanilla"], story:"Riang dan memikat. Mangga juicy dengan tiare tropis—senyum yang menular." },
-      { code:"ENFP", name:"The Spark", notes:["Lime","Neroli","White Musk"], story:"Optimis dan penuh ide. Limau menari dengan neroli—kebebasan dalam botol." },
-      { code:"ENTP", name:"The Maverick", notes:["Yuzu","Cardamom","Cedar"], story:"Main-main tapi tajam. Yuzu segar dibumbui kapulaga—kejutan menyenangkan." },
-      { code:"ESTJ", name:"The Marshal", notes:["Aldehydes","Geranium","Oakmoss"], story:"Tertata dan tegas. Bersih, klasik, siap memimpin—proyeksi rapi sepanjang hari." },
-      { code:"ESFJ", name:"The Host", notes:["Peony","Raspberry","White Woods"], story:"Hangat sosial. Peony dan raspberry halus—ramah dan mudah disukai." },
-      { code:"ENFJ", name:"The Orchestrator", notes:["Blackcurrant","Jasmine","Ambroxan"], story:"Empatik dan menggerakkan. Cassis dan melati modern—auranya mempersatukan." },
-      { code:"ENTJ", name:"The Commander", notes:["Saffron","Oud","Patchouli"], story:"Berani dan visioner. Saffron kering bertemu oud ramping—signature berkarakter." }
-    ];
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("heroBottle").src = heroBottle;
-
-    document.getElementById("cta-form").href = LINKS.googleForm;
-    document.getElementById("finder-form").href = LINKS.googleForm;
-    document.getElementById("wa-link").href = LINKS.whatsapp;
-    document.getElementById("tokopedia-link").href = LINKS.tokopedia;
-    document.getElementById("shopee-link").href = LINKS.shopee;
-    document.getElementById("nav-market").href = LINKS.tokopedia;
-
-    const wrap = document.getElementById("cards");
-    MBTI.forEach(p => {
-      const el = document.createElement("div");
-      el.className = "rounded-2xl border bg-white hover:shadow-lg transition flex flex-col";
-      el.innerHTML = `
-        <div class="p-6"><h3 class="font-semibold text-lg">${p.code} — ${p.name}</h3></div>
-        <div class="px-6 pb-6 space-y-3 grow">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden border bg-white/60">
-            <img src="${imageByType(p.code)}" alt="Botol ${p.code}" class="h-full w-full object-cover">
-          </div>
-          <p class="text-sm text-slate-600">${p.story}</p>
-          <div class="flex flex-wrap gap-2 text-xs">
-            ${p.notes.map(n => `<span class="px-2 py-1 rounded-full border bg-white">${n}</span>`).join("")}
-          </div>
-          <div class="grid grid-cols-2 gap-2 pt-2">
-            <a href="${LINKS.tokopedia}" target="_blank" class="rounded-xl px-3 py-2 text-center text-white" style="background:var(--brand)">Tokopedia</a>
-            <a href="${LINKS.shopee}" target="_blank" class="rounded-xl px-3 py-2 text-center border">Shopee</a>
-          </div>
-        </div>`;
-      wrap.appendChild(el);
-    });
-  </script>
+      </div>`;
+    wrap.appendChild(el);
+  });
+</script>
 </body>
 </html>
-
