@@ -1,251 +1,91 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pērsonae — Parfum MBTI</title>
-  <meta name="description" content="Pērsonae menerjemahkan 16 tipe MBTI menjadi aroma parfum yang personal.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --muted: #6b7280; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
-    .font-serif { font-family: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif; }
-    .glass { background: rgba(255,255,255,.7); backdrop-filter: blur(8px); }
+    :root { --brand:#0f172a }
+    body{ font-family:Inter,system-ui,sans-serif }
+    .font-serif{ font-family:"Playfair Display",serif }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-rose-50 via-white to-orange-50 text-gray-900">
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 glass border-b">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#hero" class="font-serif text-2xl tracking-wide">Pērsonae</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:opacity-70">About</a>
-        <a href="#fragrances" class="hover:opacity-70">Fragrances</a>
-        <a href="#mbti" class="hover:opacity-70">MBTI Scent</a>
-        <a href="#contact" class="hover:opacity-70">Contact</a>
-        <a href="#shop" class="rounded-2xl px-4 py-2 border hover:bg-black hover:text-white transition">Shop</a>
-      </nav>
-    </div>
-  </header>
+<body class="min-h-screen bg-[#fff9f5] text-slate-900">
 
-  <!-- HERO -->
-  <section id="hero" class="relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="font-serif text-4xl md:text-6xl leading-tight">
-          Parfum Personal <span class="italic">berdasarkan</span> Kepribadian
-        </h1>
-        <p class="mt-5 text-lg text-gray-600">
-          Pērsonae menerjemahkan 16 tipe MBTI menjadi aroma yang hidup: setiap botol adalah cerita—tentang cara Anda merasa, berpikir, dan terhubung.
-        </p>
-        <div class="mt-6 flex gap-3">
-          <a href="#mbti" class="rounded-2xl px-5 py-2.5 bg-black text-white">Temukan Aromamu</a>
-          <a href="#fragrances" class="rounded-2xl px-5 py-2.5 border">Lihat Koleksi</a>
-        </div>
-        <!-- Email capture -->
-        <div class="mt-8">
-          <form class="flex flex-col sm:flex-row gap-2 max-w-md" onsubmit="event.preventDefault(); alert('Terima kasih! (Placeholder)');">
-            <input type="email" required placeholder="Email kamu" class="rounded-2xl px-3 py-2 border w-full">
-            <button class="rounded-2xl px-4 py-2 bg-black text-white">Dapatkan Update</button>
-          </form>
-          <p class="mt-2 text-xs text-gray-500">Dapatkan diskon launch & akses blind buy terbatas.</p>
-        </div>
-      </div>
-      <div class="relative">
-        <div class="aspect-[4/5] w-full rounded-3xl bg-white shadow-xl border overflow-hidden grid place-items-center">
-          <div class="p-8 text-center">
-            <!-- Simple bottle placeholder SVG -->
-            <svg width="140" height="180" viewBox="0 0 140 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="30" width="80" height="120" rx="14" fill="#f3f4f6" stroke="#d1d5db"/>
-              <rect x="45" y="10" width="50" height="25" rx="4" fill="#e5e7eb" stroke="#d1d5db"/>
-              <rect x="42" y="70" width="56" height="40" rx="8" fill="#fff" stroke="#e5e7eb"/>
-              <text x="70" y="95" text-anchor="middle" font-size="10" fill="#6b7280">Pērsonae</text>
-            </svg>
-            <h3 class="mt-6 font-medium">Personaé Eau de Parfum</h3>
-            <p class="text-sm text-gray-500">Ganti dengan foto produkmu nanti.</p>
-          </div>
-        </div>
-        <div class="absolute -z-10 inset-0 blur-3xl opacity-30 bg-gradient-to-tr from-rose-200 via-pink-100 to-yellow-100"></div>
-      </div>
-    </div>
-  </section>
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+  <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <a href="#hero" class="font-serif text-2xl">Pērsonae</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#about">Tentang</a>
+      <a href="#catalog">Katalog</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ABOUT -->
-  <section id="about" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div class="space-y-6">
-        <h2 class="text-2xl md:text-3xl font-semibold">Aroma dengan Logika, Cerita dengan Rasa</h2>
-        <p class="text-gray-600">Kami memadukan riset kepribadian dan seni perfumery. Setiap tipe MBTI diterjemahkan ke dalam akord utama (top–heart–base) sehingga cocok dengan preferensi emosional dan kognitifnya.</p>
-        <div class="grid sm:grid-cols-3 gap-5">
-          <div class="flex gap-4">
-            <div class="shrink-0 rounded-2xl p-3 shadow bg-white/60 border">✨</div>
-            <div>
-              <h4 class="font-semibold">Personalized</h4>
-              <p class="text-sm text-gray-600">16 tipe MBTI dengan komposisi khas.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="shrink-0 rounded-2xl p-3 shadow bg-white/60 border">🌿</div>
-            <div>
-              <h4 class="font-semibold">Safe-first</h4>
-              <p class="text-sm text-gray-600">Ethanol food grade & standar kebersihan.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="shrink-0 rounded-2xl p-3 shadow bg-white/60 border">💧</div>
-            <div>
-              <h4 class="font-semibold">Eau de Parfum</h4>
-              <p class="text-sm text-gray-600">Konsentrasi 18–22% untuk daya tahan.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 gap-4">
-        <!-- Four simple cards -->
-        <div class="rounded-2xl border p-4 bg-white">
-          <h3 class="text-base font-semibold mb-2">Top Notes</h3>
-          <div class="h-24 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border"></div>
-        </div>
-        <div class="rounded-2xl border p-4 bg-white">
-          <h3 class="text-base font-semibold mb-2">Heart</h3>
-          <div class="h-24 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border"></div>
-        </div>
-        <div class="rounded-2xl border p-4 bg-white">
-          <h3 class="text-base font-semibold mb-2">Base</h3>
-          <div class="h-24 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border"></div>
-        </div>
-        <div class="rounded-2xl border p-4 bg-white">
-          <h3 class="text-base font-semibold mb-2">Trail</h3>
-          <div class="h-24 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border"></div>
-        </div>
-      </div>
+<section id="hero" class="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h1 class="font-serif text-4xl md:text-6xl">Parfum Personal yang Bicara Bahasa Dirimu</h1>
+    <p class="mt-5 text-lg text-slate-600">Kami menerjemahkan 16 tipe MBTI menjadi aroma hidup. Setiap botol adalah cerita tentang cara kamu merasa, berpikir, dan terhubung.</p>
+    <div class="mt-6 flex gap-3">
+      <a href="#catalog" class="px-5 py-2.5 rounded-2xl text-white" style="background:var(--brand)">Lihat Katalog</a>
+      <a href="https://wa.me/6289623241843" target="_blank" class="px-5 py-2.5 rounded-2xl border">WhatsApp</a>
     </div>
-  </section>
+  </div>
+  <div>
+    <img src="https://images.unsplash.com/photo-1556228453-efd1e5f5b9d1?q=80&w=1200&auto=format&fit=crop" alt="Botol Personaé" class="rounded-3xl shadow border" />
+  </div>
+</section>
 
-  <!-- FRAGRANCES -->
-  <section id="fragrances" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="flex items-end justify-between mb-6">
-      <h2 class="text-2xl md:text-3xl font-semibold">Koleksi Unggulan</h2>
-      <a href="#shop" class="text-sm underline">Lihat semua</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Card 1 -->
-      <div class="rounded-2xl border bg-white hover:shadow-lg transition">
-        <div class="p-6">
-          <h3 class="font-semibold flex items-center gap-2">⭐ ISTJ — Terra Archive</h3>
-        </div>
-        <div class="px-6 pb-6 space-y-3">
-          <div class="aspect-[4/5] rounded-xl border bg-white/60"></div>
-          <p class="text-sm text-gray-600">Terstruktur, tenang, dan rapi. Iris bedak berpadu kayu kering untuk rasa aman elegan.</p>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <span class="px-2 py-1 rounded-full border bg-white">Iris</span>
-            <span class="px-2 py-1 rounded-full border bg-white">Cedarwood</span>
-            <span class="px-2 py-1 rounded-full border bg-white">Vetiver</span>
-          </div>
-          <button class="w-full rounded-xl px-4 py-2 bg-black text-white">Tambah ke Keranjang</button>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="rounded-2xl border bg-white hover:shadow-lg transition">
-        <div class="p-6">
-          <h3 class="font-semibold flex items-center gap-2">⭐ ENFP — Solar Bloom</h3>
-        </div>
-        <div class="px-6 pb-6 space-y-3">
-          <div class="aspect-[4/5] rounded-xl border bg-white/60"></div>
-          <p class="text-sm text-gray-600">Percikan citrus optimistis mengalir ke bunga ceria—siap menyalakan ide.</p>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <span class="px-2 py-1 rounded-full border bg-white">Citrus</span>
-            <span class="px-2 py-1 rounded-full border bg-white">White Musk</span>
-            <span class="px-2 py-1 rounded-full border bg-white">Jasmine</span>
-          </div>
-          <button class="w-full rounded-xl px-4 py-2 bg-black text-white">Tambah ke Keranjang</button>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="rounded-2xl border bg-white hover:shadow-lg transition">
-        <div class="p-6">
-          <h3 class="font-semibold flex items-center gap-2">⭐ INTJ — Obsidian Mind</h3>
-        </div>
-        <div class="px-6 pb-6 space-y-3">
-          <div class="aspect-[4/5] rounded-xl border bg-white/60"></div>
-          <p class="text-sm text-gray-600">Kulit & dupa misterius, disusun presisi—dingin di luar, menyala di dalam.</p>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <span class="px-2 py-1 rounded-full border bg-white">Leather</span>
-            <span class="px-2 py-1 rounded-full border bg-white">Incense</span>
-            <span class="px-2 py-1 rounded-full border bg-white">Amber</span>
-          </div>
-          <button class="w-full rounded-xl px-4 py-2 bg-black text-white">Tambah ke Keranjang</button>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="about" class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">Aroma dengan Logika, Cerita dengan Rasa</h2>
+  <p class="text-slate-600 mb-6">Top, heart, dan base disusun agar sesuai preferensi tiap tipe MBTI.</p>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Personalized MBTI</div>
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Blind-Buy Friendly</div>
+    <div class="p-6 border rounded-2xl bg-white text-sm text-slate-700">Quality First</div>
+  </div>
+</section>
 
-  <!-- MBTI FINDER -->
-  <section id="mbti" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Pilih Tipe MBTI-mu</h2>
-    <p class="text-sm text-gray-600 mb-6">Belum tahu MBTI? Kami sediakan kuis singkat—atau pilih langsung tipe favoritmu.</p>
-    <div class="grid grid-cols-4 sm:grid-cols-8 gap-3">
-      <script>
-        const types = ["ISTJ","ISFJ","INFJ","INTJ","ISTP","ISFP","INFP","INTP","ESTP","ESFP","ENFP","ENTP","ESTJ","ESFJ","ENFJ","ENTJ"];
-        document.addEventListener('DOMContentLoaded', () => {
-          const grid = document.currentScript.parentElement;
-          types.forEach(t => {
-            const btn = document.createElement('button');
-            btn.className = 'rounded-xl border bg-white py-2 text-sm hover:shadow';
-            btn.textContent = t;
-            btn.onclick = () => alert('Rekomendasi untuk ' + t + ' (placeholder)');
-            grid.appendChild(btn);
-          });
-        });
-      </script>
+<section id="catalog" class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-8">Katalog Pērsonae</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 border rounded-2xl bg-white">
+      <h3 class="font-semibold mb-2">ISTJ — The Archivist</h3>
+      <p class="text-sm text-slate-600">Iris • Cedarwood • Vetiver</p>
     </div>
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border p-6 bg-white">
-        <h3 class="font-semibold">Rekomendasi Cepat</h3>
-        <p class="text-sm text-gray-600 mt-2">Pilih tipe → tampilkan tiga aroma paling cocok (citrus, floral, woody).</p>
-      </div>
-      <div class="rounded-2xl border p-6 bg-white">
-        <h3 class="font-semibold">Blind Buy Friendly</h3>
-        <p class="text-sm text-gray-600 mt-2">Catatan aroma, sillage, dan skala intensitas 1–5.</p>
-      </div>
-      <div class="rounded-2xl border p-6 bg-white">
-        <h3 class="font-semibold">Storytelling</h3>
-        <p class="text-sm text-gray-600 mt-2">Cerita singkat menggambarkan kekuatan & tantangan tiap tipe.</p>
-      </div>
+    <div class="p-6 border rounded-2xl bg-white">
+      <h3 class="font-semibold mb-2">ENFP — The Spark</h3>
+      <p class="text-sm text-slate-600">Lime • Neroli • White Musk</p>
     </div>
-  </section>
+    <div class="p-6 border rounded-2xl bg-white">
+      <h3 class="font-semibold mb-2">INTJ — The Strategist</h3>
+      <p class="text-sm text-slate-600">Leather • Black Tea • Labdanum</p>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT / CTA -->
-  <section id="contact" class="mx-auto max-w-6xl px-4 py-16">
-    <div class="rounded-3xl p-8 md:p-12 border glass shadow">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-semibold">Siap Launching?</h2>
-          <p class="mt-3 text-gray-600">Kami bisa hubungkan form validasi, pre-order, dan pembayaran (Tokopedia/Shopee/WhatsApp). Tinggal kasih preferensi dan kami siapkan integrasinya.</p>
-        </div>
-        <form class="grid gap-3" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan menghubungi Anda. (Placeholder)');">
-          <input placeholder="Nama" class="rounded-xl px-3 py-2 border" required>
-          <input type="email" placeholder="Email" class="rounded-xl px-3 py-2 border" required>
-          <input placeholder="Instagram / WhatsApp" class="rounded-xl px-3 py-2 border">
-          <button class="rounded-xl px-4 py-2 bg-black text-white">Kirim</button>
-        </form>
-      </div>
-    </div>
-  </section>
+<section id="contact" class="mx-auto max-w-6xl px-4 py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">Hubungi Kami</h2>
+  <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" class="grid gap-4 max-w-lg">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden"><input name="bot-field"></p>
+    <input type="text" name="nama" placeholder="Nama" class="border rounded-xl px-3 py-2" required>
+    <input type="email" name="email" placeholder="Email" class="border rounded-xl px-3 py-2" required>
+    <textarea name="pesan" placeholder="Pesan" class="border rounded-xl px-3 py-2 h-28"></textarea>
+    <button class="px-4 py-2 rounded-xl text-white" style="background:var(--brand)">Kirim</button>
+  </form>
+  <p class="text-xs text-slate-500 mt-2">Aktifkan notifikasi form ke email kamu di Netlify → Forms → Notifications (isi: brandonxavier1908@gmail.com).</p>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-gray-600 flex flex-col md:flex-row items-center justify-between gap-3">
-      <p>© <span id="year"></span> Pērsonae. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="#" class="hover:opacity-80">Kebijakan Privasi</a>
-        <a href="#" class="hover:opacity-80">Syarat & Ketentuan</a>
-      </div>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<footer class="border-t">
+  <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600 flex justify-between">
+    <p>© <span id="year"></span> Pērsonae</p>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear()</script>
 </body>
 </html>
